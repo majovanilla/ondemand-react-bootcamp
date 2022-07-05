@@ -1,0 +1,14 @@
+/node_modules
+/vendor
+/dist
+.DS_Store
+.yalc
+.env
+yalc.lock
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
