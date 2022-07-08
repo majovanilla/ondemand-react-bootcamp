@@ -21,6 +21,7 @@ function useLatestAPI() {
         setApiMetadata({ ref, isLoading: false });
       } catch (err) {
         setApiMetadata({ ref: null, isLoading: false });
+        // eslint-disable-next-line no-console
         console.error(err);
       }
     }

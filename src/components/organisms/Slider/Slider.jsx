@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 // Styled components
@@ -31,9 +31,6 @@ function Slider({ bannerData, isLoading }) {
       console.log('previous Slide click');
     }
   };
-
-  console.log('information from useFeaturedBanners', bannerData, isLoading);
-  console.log('currentSlide', currentSlide);
 
   return (
     isLoading ? <Loader />
