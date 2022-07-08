@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { API_BASE_URL } from '../constants';
-import { useLatestAPI } from './useLatestAPI';
+import useLatestAPI from './useLatestAPI';
 
-export function useFeaturedBanners() {
+function useFeaturedBanners() {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
   const [featuredBanners, setFeaturedBanners] = useState(() => ({
     data: {},
@@ -11,7 +11,7 @@ export function useFeaturedBanners() {
 
   useEffect(() => {
     if (!apiRef || isApiMetadataLoading) {
-      return () => {};
+      return () => { };
     }
 
     const controller = new AbortController();
@@ -22,11 +22,11 @@ export function useFeaturedBanners() {
 
         const response = await fetch(
           `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
-            '[[at(document.type, "banner")]]'
+            '[[at(document.type, "banner")]]',
           )}&lang=en-us&pageSize=5`,
           {
             signal: controller.signal,
-          }
+          },
         );
         const data = await response.json();
 
@@ -46,3 +46,5 @@ export function useFeaturedBanners() {
 
   return featuredBanners;
 }
+
+export default useFeaturedBanners;
