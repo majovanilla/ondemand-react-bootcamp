@@ -12,4 +12,5 @@ export const Container = styled.div`
 export const Icon = styled.img`
   width: ${(props) => props.width};
   height:  ${(props) => props.height};
+  margin: 0 10px;
 `;

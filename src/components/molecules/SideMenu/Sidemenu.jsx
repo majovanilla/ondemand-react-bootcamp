@@ -1,6 +1,6 @@
 import React from 'react';
-import { Icon } from '../../atoms/Logo/styled';
-import { Container } from './syled';
+import { Icon } from '../../atoms/Icon/styled';
+import Container from './syled';
 
 // Assets
 import cartIcon from '../../../images/shop.png';

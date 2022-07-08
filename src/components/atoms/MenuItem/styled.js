@@ -6,4 +6,4 @@ const Link = styled.a`
   text-decoration: none;
 `;
 
-export default { Link };
+export default Link;

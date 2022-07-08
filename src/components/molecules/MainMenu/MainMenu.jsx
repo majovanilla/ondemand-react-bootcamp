@@ -4,7 +4,7 @@ import React from 'react';
 import MenuItem from '../../atoms/MenuItem/MenuItem';
 
 // Styled components
-import { Container } from './styled';
+import Container from './styled';
 
 function MainMenu() {
   const menus = [
@@ -16,10 +16,7 @@ function MainMenu() {
 
   return (
     <Container>
-      {menus.map((menu) => {
-        console.log(menu);
-        return <MenuItem title={menu.title} />;
-      })}
+      {menus.map((menu) => <MenuItem title={menu.title} href={menu.href} key={menu.title} />)}
     </Container>
   );
 }

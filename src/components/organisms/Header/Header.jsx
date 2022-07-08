@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../atoms/Logo/Logo';
+import Logo from '../../atoms/Icon/Icon';
 
 // molecules
 import MainMenu from '../../molecules/MainMenu/MainMenu';
