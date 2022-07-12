@@ -1,5 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
+import useFeaturedBanners from '../utils/hooks/useFeaturedBanners';
+import useFeaturedProducts from '../utils/hooks/useFeaturedProducts';
 
 // Components
 import Header from '../components/organisms/Header/Header';
@@ -7,22 +9,24 @@ import Slider from '../components/organisms/Slider/Slider';
 import Grid from '../components/organisms/Grid/Grid';
 import Footer from '../components/organisms/Footer/Footer';
 
-function HomePage({ bannerData, isLoading }) {
+// Styled components
+import MainSection from './styled';
+
+function HomePage() {
+  const { data, isLoading } = useFeaturedBanners();
+
+  const { productsData, productsIsLoading } = useFeaturedProducts();
+
   return (
     <>
       <Header />
-      <div style={{ marginTop: '83px' }}>
-        <Slider bannerData={bannerData} isLoading={isLoading} />
-        <Grid />
-      </div>
+      <MainSection style={{ marginTop: '83px' }}>
+        <Slider bannerData={data} isLoading={isLoading} />
+        <Grid productsData={productsData} isLoading={productsIsLoading} />
+      </MainSection>
       <Footer />
     </>
   );
 }
-
-HomePage.propTypes = {
-  bannerData: PropTypes.objectOf(PropTypes.string).isRequired,
-  isLoading: PropTypes.bool.isRequired,
-};
 
 export default HomePage;
