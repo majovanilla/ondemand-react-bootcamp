@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ondemand-react-bootcamp/static/css/main.a97bff97.chunk.css",
+    "main.js": "/ondemand-react-bootcamp/static/js/main.180471f3.chunk.js",
+    "main.js.map": "/ondemand-react-bootcamp/static/js/main.180471f3.chunk.js.map",
+    "runtime-main.js": "/ondemand-react-bootcamp/static/js/runtime-main.95eacaef.js",
+    "runtime-main.js.map": "/ondemand-react-bootcamp/static/js/runtime-main.95eacaef.js.map",
+    "static/js/2.99c2d92a.chunk.js": "/ondemand-react-bootcamp/static/js/2.99c2d92a.chunk.js",
+    "static/js/2.99c2d92a.chunk.js.map": "/ondemand-react-bootcamp/static/js/2.99c2d92a.chunk.js.map",
+    "static/js/3.f58b2cdb.chunk.js": "/ondemand-react-bootcamp/static/js/3.f58b2cdb.chunk.js",
+    "static/js/3.f58b2cdb.chunk.js.map": "/ondemand-react-bootcamp/static/js/3.f58b2cdb.chunk.js.map",
+    "index.html": "/ondemand-react-bootcamp/index.html",
+    "static/css/main.a97bff97.chunk.css.map": "/ondemand-react-bootcamp/static/css/main.a97bff97.chunk.css.map",
+    "static/js/2.99c2d92a.chunk.js.LICENSE.txt": "/ondemand-react-bootcamp/static/js/2.99c2d92a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.95eacaef.js",
+    "static/js/2.99c2d92a.chunk.js",
+    "static/css/main.a97bff97.chunk.css",
+    "static/js/main.180471f3.chunk.js"
+  ]
+}
