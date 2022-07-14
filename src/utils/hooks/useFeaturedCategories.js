@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { API_BASE_URL } from '../constants';
 import useLatestAPI from './useLatestAPI';
 
-function useFeaturedBanners() {
+function useFeaturedCategories() {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
-  const [featuredBanners, setFeaturedBanners] = useState(() => ({
-    data: {},
-    isLoading: true,
+  const [featuredCategories, setFeaturedCategories] = useState(() => ({
+    categoriesData: {},
+    categoriesIsLoading: true,
   }));
 
   useEffect(() => {
@@ -16,36 +16,35 @@ function useFeaturedBanners() {
 
     const controller = new AbortController();
 
-    async function getFeaturedBanners() {
+    async function getFeaturedCategories() {
       try {
-        setFeaturedBanners({ data: {}, isLoading: true });
+        setFeaturedCategories({ categoriesData: {}, categoriesIsLoading: true });
 
         const response = await fetch(
           `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
-            '[[at(document.type, "banner")]]',
+            '[[at(document.type, "category")]]',
           )}&lang=en-us&pageSize=5`,
           {
             signal: controller.signal,
           },
         );
-        const data = await response.json();
-
-        setFeaturedBanners({ data, isLoading: false });
+        const categoriesData = await response.json();
+        setFeaturedCategories({ categoriesData, categoriesIsLoading: false });
       } catch (err) {
-        setFeaturedBanners({ data: {}, isLoading: false });
+        setFeaturedCategories({ categoriesData: {}, categoriesIsLoading: false });
         // eslint-disable-next-line no-console
         console.error(err);
       }
     }
 
-    getFeaturedBanners();
+    getFeaturedCategories();
 
     return () => {
       controller.abort();
     };
   }, [apiRef, isApiMetadataLoading]);
 
-  return featuredBanners;
+  return featuredCategories;
 }
 
-export default useFeaturedBanners;
+export default useFeaturedCategories;
