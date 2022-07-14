@@ -6,8 +6,15 @@ const Container = styled.div`
 
 const BannerImage = styled.div`
   position: relative;
-  height: 50vh;
+  height: 70vh;
   background-image: url(${(props) => props.src});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (min-width: 768px) {
+    height: 50vh;
+  }
 `;
 
 const Loader = styled.div``;

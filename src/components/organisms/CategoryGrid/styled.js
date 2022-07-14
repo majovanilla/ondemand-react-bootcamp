@@ -19,11 +19,15 @@ const MainTitle = styled.p`
 `;
 
 const CategoryItem = styled.a`
-  width: 30%;
+  width: 40%;
   height: 200px;
   margin: 10px 10px;
   overflow: hidden;
   position: relative;
+
+  @media (min-width: 768px) {
+    width: 30%;
+  }
 `;
 
 const CategoryTitle = styled.p`

@@ -19,10 +19,15 @@ const MainTitle = styled.p`
 `;
 
 const ProductItem = styled.div`
-  width: 30%;
-  height: 300px;
+  width: 40%;
+  height: 200px;
   margin: 10px 10px;
   overflow: hidden;
+  position: relative;
+
+  @media (min-width: 768px) {
+    width: 30%;
+  }
 `;
 
 const ProductTitle = styled.p`

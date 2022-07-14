@@ -18,7 +18,6 @@ function Slider({ bannerData: { results }, isLoading }) {
 
   const changeSlide = (action) => {
     const { length } = results;
-    console.log('length', length);
     if (action === 'next') {
       if (currentSlide === length - 1) {
         setCurrentSlide(0);

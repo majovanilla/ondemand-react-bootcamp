@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 9000;
   background: white;
   display: flex;
   justify-content: space-around;

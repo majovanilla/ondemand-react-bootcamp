@@ -10,7 +10,13 @@ export const Container = styled.div`
 `;
 
 export const Icon = styled.img`
-  width: ${(props) => props.width};
-  height:  ${(props) => props.height};
-  margin: 0 10px;
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+
+  @media (min-width: 768px) {
+    width: ${(props) => props.width};
+    height:  ${(props) => props.height};
+    margin: 0 10px;
+  }
 `;
