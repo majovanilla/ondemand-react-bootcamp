@@ -6,11 +6,12 @@ import SectionTitle from '../../atoms/SectionTitle/SectionTitle';
 
 // Styled components
 import {
-  Container, ProductContainer, ProductItem, ProductPicture, ProductPrice, ProductTitle,
+  Container, ProductContainer, ProductItem, ProductPicture, Text, Tag, ProductTitle,
 } from './styled';
 import Loader from '../../atoms/Loader/Loader';
 
-function Grid({ productsData, isLoading }) {
+function ProductGrid({ data, isLoading, isCategory }) {
+  console.log('isCategory: ', isCategory, 'data ====>', data);
   return (
     <Container>
       {isLoading ? <Loader />
@@ -18,14 +19,18 @@ function Grid({ productsData, isLoading }) {
           <>
             <SectionTitle title="Featured Products" />
             <ProductContainer>
-              { productsData.results.map((product) => (
+              { data.results.map((product) => (
                 <ProductItem key={product.id}>
-                  <ProductPicture src={product.data.mainimage.url} />
+                  <ProductPicture src={product.data.mainimage.url}>
+                    <Tag>
+                      {product.data.category.slug}
+                    </Tag>
+                  </ProductPicture>
                   <ProductTitle>{product.data.name}</ProductTitle>
-                  <ProductPrice>
+                  <Text>
                     $
                     {product.data.price}
-                  </ProductPrice>
+                  </Text>
                 </ProductItem>
               ))}
             </ProductContainer>
@@ -35,9 +40,10 @@ function Grid({ productsData, isLoading }) {
   );
 }
 
-Grid.propTypes = {
+ProductGrid.propTypes = {
   isLoading: PropTypes.bool.isRequired,
-  productsData: PropTypes.shape({
+  isCategory: PropTypes.bool,
+  data: PropTypes.shape({
     results: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.string,
       uid: PropTypes.string,
@@ -78,4 +84,8 @@ Grid.propTypes = {
   }).isRequired,
 };
 
-export default Grid;
+ProductGrid.defaultProps = {
+  isCategory: false,
+};
+
+export default ProductGrid;

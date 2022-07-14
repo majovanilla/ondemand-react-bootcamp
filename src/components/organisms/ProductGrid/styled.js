@@ -32,11 +32,21 @@ const ProductTitle = styled.p`
   text-align: center;
 `;
 
-const ProductPrice = styled(ProductTitle)`
+const Text = styled(ProductTitle)`
   font-weight: normal;
 `;
 
+const Tag = styled(ProductTitle)`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  margin: 0;
+  background-color: beige;
+`;
+
 const ProductPicture = styled.div`
+  position: relative;
   background-image: url(${(props) => props.src});
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,5 +56,5 @@ const ProductPicture = styled.div`
 `;
 
 export {
-  Container, ProductContainer, ProductItem, MainTitle, ProductTitle, ProductPrice, ProductPicture,
+  Container, ProductContainer, ProductItem, MainTitle, ProductTitle, Text, Tag, ProductPicture,
 };
